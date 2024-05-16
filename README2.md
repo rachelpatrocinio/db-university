@@ -3,3 +3,7 @@
 
 ### SELEZIONARE TUTTI I CORSI DI LAUREA MAGISTRALE DEL DEPARTIMENTO DI NEUROSCIENZE
 - SELECT `degrees`.*, `departments`.`name` FROM `degrees` INNER JOIN `departments` ON `departments`.`id`= `degrees`.`department_id` WHERE `degrees`.`level` = 'magistrale' AND `departments`.`name` = 'dipartimento di neuroscienze';
+
+### SELEZIONARE TUTTI I CORSI IN CUI INSEGNA FULVIO AMATO (ID=44)
+- SELECT `teachers`.`id`, `teachers`.`name`, `teachers`.`surname`, `course_teacher`.`teacher_id`, `degrees`.`name` FROM `teachers` INNER JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id` INNER JOIN `courses` ON `courses`.`id` = `course_teacher`.`course_id` INNER JOIN `degrees` ON `degrees`.`id` = `courses`.`degree_id` WHERE `teachers`.`id` = 44;
+
