@@ -19,8 +19,8 @@
 ### SELEZIONARE TUTTI I CORSI DI LAUREA MAGISTRALE (38)
 - SELECT * FROM `degrees` WHERE `level` = 'magistrale';
 
-### DA QUANTI DIPARTIMENTI E' COMPOSTA L'UNIVERSITA'?
+### DA QUANTI DIPARTIMENTI E' COMPOSTA L'UNIVERSITA'? (12)
 - SELECT COUNT(*) AS `university_departments` FROM `departments`;
 
 ### QUANTI SONO GLI INSEGNANTI CHE NON HANNO UN NUMERO DI TELEFONO? (50)
-- SELECT COUNT(*) `teachers_withouth_number` FROM `teachers` WHERE `phone` IS NULL;
+- SELECT COUNT(*) `teachers_without_number` FROM `teachers` WHERE `phone` IS NULL;
