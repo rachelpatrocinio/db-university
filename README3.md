@@ -6,3 +6,6 @@
 
 ### CALCOLARE LA MEDIA DEI VOTI DI OGNI APPELLO D'ESAME
 - SELECT COUNT(*) AS `exams_per_date`, `exams`.`date`, AVG(`exam_student`.`vote`) AS `average_vote` FROM `exam_student` INNER JOIN `exams` ON `exams`.`id` = `exam_student`.`exam_id` GROUP BY `exams`.`date`;
+
+### CONTARE QUANTI CORSI DI LAUREA CI SONO PER OGNI DIPARTIMENTO
+- SELECT COUNT(*) AS `total_of_degrees`, `departments`.`name` FROM `degrees` INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` GROUP BY `departments`.`name`;
