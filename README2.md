@@ -1,2 +1,2 @@
 ### SELEZIONARE TUTTI GLI STUDENTI ISCRITTI AL CORSO DI LAUREA IN ECONOMIA
-- 
+- SELECT * FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
