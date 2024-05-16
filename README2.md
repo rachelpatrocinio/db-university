@@ -12,3 +12,6 @@
 
 ### SELEZIONARE TUTTI I CORSI DI LAUREA CON I RELATIVI CORSI E INSEGNANTI
 - SELECT `degrees`.`name`, `courses`.`id`, `courses`.`name`, `teachers`.`name`, `teachers`.`surname` FROM `degrees` INNER JOIN `courses` ON `degrees`.`id`=`courses`.`degree_id` INNER JOIN `course_teacher` ON `courses`.`id`=`course_teacher`.`course_id` INNER JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id`;
+
+### SELEZIONARE TUTTI I DOCENTI CHE INSEGNANO NEL DIPARTIMENTO DI MATEMATICA(54)
+- SELECT DISTINCT `teachers`.`id`, `teachers`.`name`, `teachers`.`surname`, `departments`.`name` FROM `teachers` INNER JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id` INNER JOIN `courses` ON `courses`.`id` = `course_teacher`.`course_id` INNER JOIN `degrees` ON `degrees`.`id` = `courses`.`degree_id` INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` WHERE `departments`.`name` = 'Dipartimento di Matematica' ORDER BY `teachers`.`id` ASC;
