@@ -9,3 +9,6 @@
 
 ### SELEZIONARE TUTTI GLI STUDENTI CON I DATI RELATIVI AL CORSO DI LAUREA A CUI SONO SCRITTI E IL RELATIVO DIPARTIMENTO, IN ORDINE ALFABETICO PER COGNOME E NOME
 - SELECT `students`.`id`, `students`.`name`,`students`.`surname`, `degrees`.`name`, `departments`.`name` FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` ORDER BY `students`.`surname` ASC, `students`.`name` ASC;
+
+### SELEZIONARE TUTTI I CORSI DI LAUREA CON I RELATIVI CORSI E INSEGNANTI
+- SELECT `degrees`.`name`, `courses`.`id`, `courses`.`name`, `teachers`.`name`, `teachers`.`surname` FROM `degrees` INNER JOIN `courses` ON `degrees`.`id`=`courses`.`degree_id` INNER JOIN `course_teacher` ON `courses`.`id`=`course_teacher`.`course_id` INNER JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id`;
